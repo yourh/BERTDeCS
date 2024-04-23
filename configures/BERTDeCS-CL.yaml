@@ -1,0 +1,23 @@
+name: BERTDeCS_CL
+features:
+  pair_a: {}
+  pair_b: {}
+batch_size: 64
+
+model:
+  model_name: CLModel
+  network_name: CLNet
+  encoder_options:
+    encoder_name: BERTEncoder
+    bert_params:
+      pretrained_model_name_or_path: bert-base-multilingual-cased
+      add_pooling_layer: false
+    dropout: 0.5
+  ph_options:
+    hidden_sizes: [768]
+
+train:
+  num_epochs: 6
+  opt_options:
+    params_lr:
+      encoder_lr: 2e-5
