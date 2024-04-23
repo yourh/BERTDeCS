@@ -1,0 +1,11 @@
+{% set data_path = data_path or "data" %}
+{% set labels = labels or "decs" %}
+{% set data_labels = data_labels or labels %}
+
+data: DeCS
+name: {{ data_name or "DeCS_ES" }}
+labels_list: {{ data_path }}/{{ labels }}_list.txt
+mbert: {{ data_path }}/{{ data }}_mbert.npy
+labels: {{ data_path }}/{{ data }}_{{ data_labels }}.txt
+pair_a: {{ data_path }}/pair_es_mbert.npy
+pair_b: {{ data_path }}/pair_en_mbert.npy

@@ -1,0 +1,27 @@
+name: BERTDeCS_A
+features:
+  inputs:
+    feature: mbert
+batch_size: 200
+
+model:
+  network_name: MLANet
+  encoder_options:
+    encoder_name: BERTEncoder
+    bert_params:
+      pretrained_model_name_or_path: bert-base-multilingual-cased
+      add_pooling_layer: false
+    adapter_cls: DoubleSeqBnConfig
+    adapter_options:
+      reduction_factor: 2
+      non_linearity: relu
+    freeze: false
+    dropout: 0.5
+  classifier_options:
+    hidden_sizes: [512, 512]
+
+train:
+  num_epochs: 10
+  opt_options:
+    params_lr:
+      encoder_lr: 2e-5
