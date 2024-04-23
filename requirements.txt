@@ -1,0 +1,12 @@
+--extra-index-url https://download.pytorch.org/whl/cu124
+numpy==1.26.3
+scipy==1.12.0
+scikit-learn==1.5.2
+torch==2.4.1+cu124
+transformers==4.43.4
+huggingface_hub==0.25.0
+adapters==1.0.0
+click==8.1.7
+ruamel.yaml==0.18.6
+tqdm==4.66.5
+logzero==1.7.0

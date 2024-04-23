@@ -1,0 +1,18 @@
+data: DeCS
+decs: data/decs_list.txt
+mesh_decs: data/decs_mesh_list.txt
+
+template:
+  name: DeCS_ES
+  mbert: data/{data}_mbert.npy
+  labels: data/{data}_decs.txt
+
+train_pubmed:
+  name: DeCS_PM300W
+  mbert: data/train_300w_mbert.npy
+  labels: data/train_300w_mesh.txt
+
+train_cl:
+  name: DeCS_CL
+  pair_a: data/pair_es_mbert.npy
+  pair_b: data/pair_en_mbert.npy
